@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# redirect to www... if needed
+RewriteCond  %{HTTP_HOST}  !www\.(.+)
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)		http://www.%{SERVER_NAME}/$1	[L,NC,R]
+
+# redirect to https
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# redirect email page
+Redirect /onlineap.php http://foreignconsultants.com/application_form.pdf
+
+Redirect /services_cce_ie.php  /services.php 
+Redirect /services_cce_phd.php  /services.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php71” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php71___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
