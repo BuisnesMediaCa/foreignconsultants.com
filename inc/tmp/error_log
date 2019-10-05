@@ -1,0 +1,5 @@
+[19-Sep-2019 10:04:37 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/inc/tmp/header1.php on line 721
+[19-Sep-2019 10:33:29 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/inc/tmp/header1.php on line 721
+[19-Sep-2019 15:40:13 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/inc/tmp/header1.php on line 721
+[19-Sep-2019 15:42:47 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/inc/tmp/header1.php on line 721
+[01-Oct-2019 20:04:28 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/inc/tmp/header1.php on line 721

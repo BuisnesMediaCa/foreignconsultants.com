@@ -1,0 +1,492 @@
+<h3 align="center"><font color="872800">Thank you for submitting<br> Online Application to Foreign Consultants, Inc.</font></h3>
+<!-- VIP: change YourEmail to your real email -->
+<?php
+// multiple recipients
+//$to = 'info@foreignconsultants.com';
+$to  = 'info@foreignconsultants.com' . ', '; // note the comma
+//$to  = 'gregbestbuy@gmail.com' . ', '; // note the comma
+
+// subject
+$subject = 'FCI Online Application';
+
+$b = ' , ';
+$flag=0;
+if ($street!=''){
+	$address.=$street;
+	$flag=1;
+}
+if ($city!=''){
+	if ($flag==1){
+		$address.=', '.$city;
+	}
+	else{
+		$address.=$city;
+		$flag=1;
+	}
+}
+if ($state!=''){
+	if ($flag==1){
+		$address.=', '.$state;
+	}
+	else{
+		$address.=$state;
+		$flag=1;
+	}
+}
+if ($zip!=''){
+	if ($flag==1){
+		$address.=', '.$zip;
+	}
+	else{
+		$address.=$zip;
+		$flag=1;
+	}
+}
+if ($country!=''){
+	if ($flag==1){
+		$address.=', '.$country;
+	}
+	else{
+		$address.=$country;
+		$flag=1;
+	}
+}
+
+//$address = $street . $b . $city . $b . $state . $b . $zip . $b . $country;
+
+$flag=0;
+//$bd = $month . $b . $day . $b . $year;
+if ($month!=''){
+	if ($flag==1){
+		$month=str_replace(' ', '', $month);
+		$bd.=', '.$month;
+	}
+	else{
+		$month=str_replace(' ', '', $month);
+		$bd.=$month;
+		$flag=1;
+	}
+}
+if ($day!=''){
+	if ($flag==1){
+		$bd.=', '.$day;
+	}
+	else{
+		$bd.=$day;
+		$flag=1;
+	}
+}
+if ($year!=''){
+	if ($flag==1){
+		$bd.=', '.$year;
+	}
+	else{
+		$bd.=$year;
+		$flag=1;
+	}
+}
+
+
+
+//Sex
+if ($female == "y") {
+$gen1 = "Female \n";
+}
+if ($male == "y") {
+$gen2 = "Male \n";
+}
+$sex = $gen1 . $gen2;
+
+//ever used FCI services
+if ($yes == "y") {
+$use1 = "Yes \n";
+}
+if ($no == "y") {
+$use2 = "No \n";
+}
+$use = $use1 . $use2;
+
+//purpose of evaluation
+$flag=0;
+if ($under_1 == "y") {
+	if ($flag==1){
+		$p1 = "Undergraduate (1st year)";
+	}else{
+		$p1 = "Undergraduate (1st year)";
+		$flag=1;
+	}
+}
+if ($under_tr == "y") {
+	if ($flag==1){
+		$p2 = ", \nUndergraduate (transfer)";
+	}else{
+		$p2 = "Undergraduate (transfer)";
+		$flag=1;
+	}
+}
+if ($grad == "y") {
+	if ($flag==1){
+		$p3 = ", \nGraduate";
+	}else{
+		$p3 = "Graduate";
+		$flag=1;
+	}
+}
+if ($empl == "y") {
+	if ($flag==1){
+		$p4 = ", \nEmployment";
+	}else{
+		$p4 = "Employment";
+		$flag=1;
+	}
+}
+if ($imm == "y") {
+	if ($flag==1){
+		$p5 = ", \nImmigration";
+	}else{
+		$p5 = "Immigration";
+		$flag=1;
+	}
+}
+if ($mil == "y") {
+	if ($flag==1){
+		$p6 = ", \nMilitary";
+	}else{
+		$p6 = "Military";
+		$flag=1;
+	}
+}
+if ($prof == "y") {
+	if ($flag==1){
+		$p6 = ", \nProfessional Licensing/Certification";
+	}else{
+		$p6 = "Professional Licensing/Certification";
+		$flag=1;
+	}
+}
+
+$p_evln = $p1 . $p2 . $p3 . $p4 . $p5 . $p6 . $p7;
+
+//purpose of evaluation
+if ($o_athrz == "y") {
+$o1 = "I authorized to release the evaluation report to another individual or institution named in this application \n";
+}
+$o= $o1;
+
+//Evaluation Products and Services
+$flag=0;
+if ($comp_ast == "y") {
+	if ($flag==1){
+		$evals1 = ", \nComparability Evaluation of Associate Degree ($200)";
+	}else{
+		$evals1 = "Comparability Evaluation of Associate Degree ($200)";
+		$flag=1;
+	}
+}
+if ($comp_bach == "y") {
+	if ($flag==1){
+		$evals2 = ", \nComparability Evaluation of Bachelor Degree ($200)";
+	}else{
+		$evals2 = "Comparability Evaluation of Bachelor Degree ($200)";
+		$flag=1;
+	}
+}
+if ($cbc_h == "y") {
+	if ($flag==1){
+		$evals3 = ", \nCourse-by-Course Evaluation of High School Diploma ($200)";
+	}else{
+		$evals3 = "Course-by-Course Evaluation of High School Diploma ($200)";
+		$flag=1;
+	}
+}
+if ($cbc_a == "y") {
+	if ($flag==1){
+		$evals4 = ", \nCourse-by-Course Evaluation of Associate Degree ($330)";
+	}else{
+		$evals4 = "Course-by-Course Evaluation of Associate Degree ($330)";
+		$flag=1;
+	}
+}
+if ($cbc_b == "y") {
+	if ($flag==1){
+		$evals5 = ", \nCourse-by-Course Evaluation of Bachelor Degree ($330)";
+	}else{
+		$evals5 = "Course-by-Course Evaluation of Bachelor Degree ($330)";
+		$flag=1;
+	}
+}
+if ($cbc_m == "y") {
+	if ($flag==1){
+		$evals6 = ", \nCourse-by-Course Evaluation of Master Degree ($330)";
+	}else{
+		$evals6 = "Course-by-Course Evaluation of Master Degree ($330)";
+		$flag=1;
+	}
+}
+if ($cbc_p == "y") {
+	if ($flag==1){
+		$evals7 = ", \nCourse-by-Course Evaluation of PhD ($500)";
+	}else{
+		$evals7 = "Course-by-Course Evaluation of PhD ($500)";
+		$flag=1;
+	}
+}
+if ($cbc_i == "y") {
+	if ($flag==1){
+		$evals8 = ", \nCourse-by-Course Evaluation of Incomplete Education ($250)";
+	}else{
+		$evals8 = "Course-by-Course Evaluation of Incomplete Education ($250)";
+		$flag=1;
+	}
+}
+if ($ev_w == "y") {
+	if ($flag==1){
+		$evals9 = ", \nEvaluation of Education and Work Experience ($500)";
+	}else{
+		$evals9 = "Evaluation of Education and Work Experience ($500)";
+		$flag=1;
+	}
+}
+if ($subj_a == "y") {
+	if ($flag==1){
+		$evals10 = ", \nSubject Analysis ($250)";
+	}else{
+		$evals10 = "Subject Analysis ($250)";
+		$flag=1;
+	}
+}
+if ($cat_m == "y") {
+	if ($flag==1){
+		$evals11 = ", \nCatalog match ($300)";
+	}else{
+		$evals11 = "Catalog match ($300)";
+		$flag=1;
+	}
+}
+if ($comp_p == "y") {
+	if ($flag==1){
+		$evals12 = ", \nComparable Program ($150)";
+	}else{
+		$evals12 = "Comparable Program ($150)";
+		$flag=1;
+	}
+}
+$evals = $evals1 . $evals2 . $evals3 . $evals4 . $evals5 . $evals6 . $evals7 . $evals8 . $evals9 . $evals10 . $evals11 . $evals12;
+
+//Additional Charges
+$flag=0;
+if ($exdipl == "y") {
+	if ($flag==1){
+		$addc1 = ", \nEvery other Diploma with or without Transcript ($100)";
+	}else{
+		$addc1 = "Every other Diploma with or without Transcript ($100)";
+		$flag=1;
+	}
+}
+if ($excert == "y") {
+	if ($flag==1){
+		$addc2 = ", \nEvery other Certificate ($50)";
+	}else{
+		$addc2 = "Every other Certificate ($50)";
+		$flag=1;
+	}
+}
+if ($exprog == "y") {
+	if ($flag==1){
+		$addc3 = ", \nEvery other Comparable Program Research ($100)";
+	}else{
+		$addc3 = "Every other Comparable Program Research ($100)";
+		$flag=1;
+	}
+}
+if ($onerush == "y") {
+	if ($flag==1){
+		$addc4 = ", \n1-day Rush Service ($100)";
+	}else{
+		$addc4 = "1-day Rush Service ($100)";
+		$flag=1;
+	}
+}
+if ($threerush == "y") {
+	if ($flag==1){
+		$addc5 = ", \n3-day Rush Service ($75)";
+	}else{
+		$addc5 = "3-day Rush Service ($75)";
+		$flag=1;
+	}
+}
+if ($fiverush == "y") {
+	if ($flag==1){
+		$addc6 = ", \n5-day Rush Service ($50)";
+	}else{
+		$addc6 = "5-day Rush Service ($50)";
+		$flag=1;
+	}
+}
+if ($excopy == "y") {
+	if ($flag==1){
+		$addc7 = ", \nExtra copies (each) ($30)";
+	}else{
+		$addc7 = "Extra copies (each) ($30)";
+		$flag=1;
+	}
+}
+if ($shipus == "y") {
+	if ($flag==1){
+		$addc8 = ", \nExpress shipment within USA ($30)";
+	}else{
+		$addc8 = "Express shipment within USA ($30)";
+		$flag=1;
+	}
+}
+if ($shipint == "y") {
+	if ($flag==1){
+		$addc9 = ", \nInternational express shipment ($50)";
+	}else{
+		$addc9 = "International express shipment ($50)";
+		$flag=1;
+	}
+}
+$addc = $addc1 . $addc2 . $addc3 . $addc4 . $addc5 . $addc6 . $addc7 . $addc8 . $addc9;
+
+// message
+//------------Name------------------------
+$message = '<html><body><strong><font color="872800" size="+1">Online Application for<br>Evaluation of Foreign Educational Credentials</font></strong><strong><hr><font color="872800" size="+1">Name</font></strong><br></body></html>'. "\r\n" . '<html><body><strong>First Name:&nbsp;</strong></body></html>'. " $fname\r\n". '<html><body><br><strong>Last Name:&nbsp;</strong></body></html>' . " $lname\r\n" . '<html><body><br><strong>Middle Name:&nbsp;</strong></body></html>'. "$mname\r\n". '<html><body><br><strong>Other Names:&nbsp;</strong>&nbsp;</body></html>' . "$oname\r\n". "\r\n";
+
+//-------- Contact Information -----------
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Contact Information<br></font></strong></body></html>
+'."\r\n".'<html><body><strong>Address:&nbsp;</strong></body></html>'."$address\r\n".'<html><body><br><strong>Telephone Number:&nbsp;</strong></body></html>'."$tel\r\n" . '<html><body><br><strong>Fax Number:&nbsp;</strong></body></html>'. "$fax\r\n". '<html><body><br><strong>Cellular Number:&nbsp;</strong></body></html>'. "$cell\r\n". '<html><body><br><strong>E-mail:&nbsp;</strong></body></html>' . "$visitormail\r\n";
+
+//---------Personal Information ----------
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Personal Information<br></font></strong></body></html>'. "\r\n". '<html><body><strong>Birth Date:&nbsp;</strong></body></html>' . "$bd\r\n" . '<html><body><br><strong>Sex:&nbsp;</strong></body></html>' . "$sex\r\n" . '<html><body><br><strong>Social Security:&nbsp;</strong></body></html>' . "$ss\r\n";
+
+//---------Evaluation Information ----------
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Evaluation Information<br></font></strong></body></html>'. "\r\n". '<html><body><strong>Have you ever used FCI services before?</strong></body></html>' . "$use\r\n" . '<html><body><br><strong>If Yes, FCI Reference Number: </strong></body></html>'. "$rfn\r\n". '<html><body><br><br><strong>Purpose of Evaluation:<br/></strong></body></html>'. "$p_evln";
+
+//---------Licensure Services ----------
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Licensure Services<br></font></strong></body></html>' . "\r\n" . '<html><body><strong>License for the Profession of:</strong></body></html>' . " $license\r\n" . '<html><body><br><strong>State of:</strong></body></html>' . " $l_state\r\n" . '<html><body><br><strong>FCI Quoted Price: </strong></body></html>$' . " $l_quote (as agreed with FCI consultant) \r\n";
+
+//---------Additional Charges ----------
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Additional Charges<br></font></strong></body></html>
+' . "\r\n" . '<html><body><br><strong>Additional charges needed:</strong></body></html>' . " $addc\r\n";
+
+//---------Total Charges ----------
+$t_total = $t_eval + $t_trans + $t_licens + $t_add + $fciother;
+
+$message .= '<html><body><strong><hr><font color="872800" size="+1">Total Charges<br></font></strong></body></html>
+' . "\r\n" . '<html><body><strong>Evaluation:</strong></body></html>' . "$$t_eval\r\n" . '<html><body><br><strong>Translation:</strong></body></html>' . "$$t_trans\r\n" . '<html><body><br><strong>Licensure:</strong></body></html>' . "$$t_licens\r\n" . '<html><body><br><strong>Additional Charges:</strong></body></html>' . "$$t_add\r\n" . '<html><body><br><strong>Other (agreed with FCI):</strong></body></html>' . " $$fciother\r\n" . '<html><body><br><strong>TOTAL AMOUNT DUE:</strong></body></html>' . "$$t_total\r\n";
+
+//-------- Educational Institutions -------
+$message .= '
+<html>
+<body><strong><hr><font color="872800" size="+1">Educational Institutions</font></strong></body></html>
+' . "\r\n" . '<html><body><strong>Educational Institution #1</strong></body></html>' . '<html><body><br><strong>Name of School:</strong></body></html>' . " $e_n\r\n" . '<html><body><br><strong>City & Country:  </strong></body></html>' . " $e_c\r\n" . '<html><body><br><strong>Diploma/Certificate Earned:</strong></body></html>' . " $e_d\r\n" . '<html><body><br><strong>Month/Year Entered:</strong></body></html>' . " $e_e\r\n" . '<html><body><br><strong>Month/Year Completed:</strong></body></html>' . " $e_c\r\n";
+
+$message .= '<html><body><br><br><strong>Educational Institution #2</strong></body></html>' . '<html><body><br><strong>Name of School:</strong></body></html>' . " $e_n2\r\n" . '<html><body><br><strong>City & Country:</strong></body></html>' . " $e_c2\r\n" . '<html><body><br><strong>Diploma/Certificate Earned:</strong></body></html>' . " $e_d2\r\n" . '<html><body><br><strong>Month/Year Entered:</strong></body></html>' . " $e_e2\r\n" . '<html><body><br><strong>Month/Year Completed:</strong></body></html>' . " $e_c2\r\n";
+
+$message .= '<html><body><br><br><strong>Educational Institution #3</strong></body></html>' . '<html><body><br><strong>Name of School:</strong></body></html>' . " $e_n3\r\n" . '<html><body><br><strong>City & Country:</strong></body></html>' . " $e_c3\r\n" . '<html><body><br><strong>Diploma/Certificate Earned:</strong></body></html>' . " $e_d3\r\n" . '<html><body><br><strong>Month/Year Entered:</strong></body></html>' . " $e_e3\r\n" . '<html><body><br><strong>Month/Year Completed:</strong></body></html>' . " $e_c3\r\n";
+
+//-------- Other party submission ---------
+$o_address = $o_to . $b . $o_att . $b . $o_street . $b . $o_city . $b . $o_state . $b . $o_zip . $b . $o_country;
+
+$message .= '
+<html>
+<body><strong><hr><font color="872800" size="+1">Other Party Submission</font></strong></body>
+</html>
+' . "\r\n" . '<html><body><strong>Address:&nbsp;</strong></body></html>'. '<html><body><br><strong>Authorization:&nbsp;</strong></body></html>' . "$o\r\n";
+
+//---------Additional Comments ----------
+$message .= '
+<html>
+<body><strong><hr><font color="872800" size="+1">Additional Comments</font></strong></body></html>
+' . "\r\n" . " $feedback\r\n";
+
+//---------CUSTOMER AFFIRMATIONS ----------
+$message .= '
+<html>
+<body><hr>
+<strong><font color="872800" size="+1">CUSTOMER AFFIRMATIONS</font></strong></body></html>
+' . "\r\n" . '<html><body><li><font size="2"><strong>REQUIRED DOCUMENTS</strong> <br>
+    A. Please submit clear, legible copies of all Diplomas, Transcripts, and/or
+    Certificates.<br>
+    B. If the documents are not in English: <br>
+    1) If you have translations, done in your country or any other country please
+    fax together with the copies of your educational documents <br>
+    2) If you don,t have translations you can order them from FCI at the prices
+    listed above.<br>
+    C. Only Certified translator experienced in the Foreign Language in question
+    can perform Legalized translation.<br>
+    D. Certified translator,s signature should be notarized, according to the
+    Law and Regulations of the country of origination of translation and notarization.<br>
+    E. FCI needs copies of both: the Original language and the Translated documents.
+    When documentation is not complete enough to provide the evaluation requested,
+    the missing information will be requested and no further action will be taken
+    until all the necessary documentation is on file with FCI.<br>
+    F. We can provide only Comparability Evaluations without detailed information
+    about courses and grades (see detailed requirements)<br>
+    G. All other Evaluation Reports require both copies of the Diplomas and/or
+    Certificates and their Official Academic Transcripts or <br>
+    Equivalent. For more details on required Documentation go to http://www.foreignconsultants.com/required_documentation.pdf
+    <br><br>
+    </font></li>
+  <li><font size="2"><strong>PAYMENT OPTIONS</strong><br>
+    A. No refund will be issued once application has been submitted.<br>
+    B. No personal checks are accepted.<br>
+    C. Payments are limited to: Cashier Checks*, Money Orders*, All Credit Cards
+    are excepted (Visa, Master Card, Discover, American Express)<br><br>
+    </font></li>
+  <li><font size="2"><strong>PROCESSION</strong><br>
+    A. Processing time is ten working days from receipt of all required documents
+    and fees. More time may be required if special research is necessary<br>
+    B. Two copies of each evaluation report are included in the basic fee.<br>
+    C. Two copies of Certified Translations will be provided, if ordered from
+    FCI.<br>
+    D. No refunds will be issued once an application has been submitted.<br>
+    E. Fees are subject to change without notice.<br><br>
+    </font></li>
+  <li><font size="2"><strong>AFFIRMATIONS</strong><br>
+    I hereby certify that the information provided on this Application, and in
+    the documents included, is true, accurate, and correct to the best of my knowledge.
+    I understood that this evaluation is advisory in nature and that Foreign Consultants,
+    Inc. assumes no responsibility or liability for consequential damages when
+    the desired equivalency cannot be recommended. I agree to reimburse Foreign
+    Consultants, Inc. for any and all costs, including legal expenses, which it
+    may incur as a result of any claim that I or anyone having an interest in
+    my earnings or services may make based on the evaluation determination which
+    foreign Consultants, Inc. makes relaying on the application. I hereby certify
+    that I have read and understand the instructions and conditions provided with
+    this form and that I agree to the Terms stated therein. I understood that
+    if false, forged, altered or falsified documents are submitted to FCI, Inc.,
+    no evaluation report will be prepared, no refund will be made, the designees
+    for copies of the report will be notified, and the information will be shared
+    with academic institutions, government agencies, professional organizations
+    and other evaluation services. </font></li>
+</body>
+</html>';
+/*
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Additional headers
+$headers .= "From: $visitormail\r\n";*/
+
+$headers  = "MIME-Version: 1.0\n";
+    $headers .= "Content-type: text/html; charset=utf-8\n";
+    $headers .= "From: '$fname $lname' <$email> \n";
+
+
+
+
+
+
+
+
+// Mail it
+mail($to, $subject, $message, $headers);
+?>
+
+<p align="left"><?php echo $screenout ?>
+
+</p>
+
