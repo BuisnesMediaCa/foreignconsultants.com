@@ -1,0 +1,2 @@
+[10-Sep-2019 22:51:45 Etc/UTC] PHP Notice:  ob_end_clean(): failed to delete buffer. No buffer to delete in /home/foreignc/public_html/file-upload/index.php on line 721
+[17-Sep-2019 17:48:09 Etc/UTC] PHP Notice:  Undefined index: file in /home/foreignc/public_html/file-upload/index.php on line 782
