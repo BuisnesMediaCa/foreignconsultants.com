@@ -15,7 +15,7 @@ $title="Comparability Evaluation (Associate and Bachelor Degree only)";
         </ul>
         <p><b>Used for: </b><br>
 		Education, when Transferred credits and Courses taken are not relevant, Employment, Immigration, Licensing, Military Enlistments</p>
-        <p>Price: $100</p>
+        <p>Price: $150</p>
 <SCRIPT LANGUAGE="JavaScript">
 function anable() {
 //frm=document.forms[0]
